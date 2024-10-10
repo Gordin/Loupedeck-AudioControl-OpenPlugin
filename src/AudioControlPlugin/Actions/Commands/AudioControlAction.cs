@@ -429,7 +429,15 @@
                     {
                         if (AudioControl.TryGetAudioControl(endpointId, out IAudioControl audioControl))
                         {
-                            AudioControl.ToggleMute(audioControl);
+                            if (audioControl.Id != AudioControl.MMAudio.DefaultCommunicationsRender.Id && audioControl.Id != AudioControl.MMAudio.DefaultMultimediaRender.Id)
+                            {
+                                AudioControl.MMAudio.SetDefaultAudioEndpoint(audioControl.Id, Role.Communications);
+                                AudioControl.MMAudio.SetDefaultAudioEndpoint(audioControl.Id, Role.Multimedia);
+                            }
+                            else
+                            {
+                                AudioControl.ToggleMute(audioControl);
+                            }
                         }
                     }
                     else if (channel == ActionChannel.A)
@@ -438,7 +446,15 @@
                         {
                             if (AudioControl.TryGetAudioControl(endpointAId, out IAudioControl audioControlA))
                             {
-                                AudioControl.ToggleMute(audioControlA);
+                                if (audioControlA.Id != AudioControl.MMAudio.DefaultCommunicationsRender.Id && audioControlA.Id != AudioControl.MMAudio.DefaultMultimediaRender.Id)
+                                {
+                                    AudioControl.MMAudio.SetDefaultAudioEndpoint(audioControlA.Id, Role.Communications);
+                                    AudioControl.MMAudio.SetDefaultAudioEndpoint(audioControlA.Id, Role.Multimedia);
+                                }
+                                else
+                                {
+                                    AudioControl.ToggleMute(audioControlA);
+                                }
                             }
                         }
                     }
@@ -448,7 +464,15 @@
                         {
                             if (AudioControl.TryGetAudioControl(endpointBId, out IAudioControl audioControlB))
                             {
-                                AudioControl.ToggleMute(audioControlB);
+                                if (audioControlB.Id != AudioControl.MMAudio.DefaultCommunicationsRender.Id && audioControlB.Id != AudioControl.MMAudio.DefaultMultimediaRender.Id)
+                                {
+                                    AudioControl.MMAudio.SetDefaultAudioEndpoint(audioControlB.Id, Role.Communications);
+                                    AudioControl.MMAudio.SetDefaultAudioEndpoint(audioControlB.Id, Role.Multimedia);
+                                }
+                                else
+                                {
+                                    AudioControl.ToggleMute(audioControlB);
+                                }
                             }
                         }
                     }
@@ -458,7 +482,15 @@
                         {
                             if (AudioControl.TryGetAudioControl(endpointCId, out IAudioControl audioControlC))
                             {
-                                AudioControl.ToggleMute(audioControlC);
+                                if (audioControlC.Id != AudioControl.MMAudio.DefaultCommunicationsRender.Id && audioControlC.Id != AudioControl.MMAudio.DefaultMultimediaRender.Id)
+                                {
+                                    AudioControl.MMAudio.SetDefaultAudioEndpoint(audioControlC.Id, Role.Communications);
+                                    AudioControl.MMAudio.SetDefaultAudioEndpoint(audioControlC.Id, Role.Multimedia);
+                                }
+                                else
+                                {
+                                    AudioControl.ToggleMute(audioControlC);
+                                }
                             }
                         }
                     }

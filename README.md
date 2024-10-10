@@ -50,7 +50,7 @@ Displays volume and peak meter and allows volume control.
 | Gesture    | Description                                                                                                               |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------- |
 | Rotate     | Adjust volume of endpoint selected in channel if Channel is not set to None, otherwise endpoint defined in configuration. |
-| Push       | Mute/unmute endpoint selected in channel if Channel is not set to None, otherwise endpoint defined in configuration.      |
+| Push       | Make endpoint default Multimedia+Communications device OR Mute/unmute if endpoint is already default. (endpoint selected in channel if Channel is not set to None, otherwise endpoint defined in configuration.)      |
 
 ### Mute/unmute all capture devices [Command]
 
